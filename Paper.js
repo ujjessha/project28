@@ -1,8 +1,6 @@
 class Paper{
     constructor(x,y,radius){
 
-        this.image=loadImage("paper.png");
-        
         var options={
             isStatic:false,
             restituution:0.3,
@@ -13,8 +11,7 @@ class Paper{
     
     this.body = Bodies.circle(x, y, radius/2, options);
     this.r= radius;
-    this.height = height;
-    
+    this.image=loadImage("paper.png");
     World.add(world, this.body);
     }
 
@@ -24,9 +21,8 @@ class Paper{
     var pos=this.body.position
     push();
     strokeWeight(3);
-	fill(255,0,255)
+    fill(255,0,255)
     translate(pos.x, pos.y);
-    ellipse(0,0,this.r,this.r);
     image(this.image,0,0,this.r,this.r);
     pop();
 
