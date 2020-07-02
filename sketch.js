@@ -11,7 +11,7 @@ function preload()
 }
 
 function setup() {
-	createCanvas(800, 700);
+	createCanvas(1600, 700);
 
 
 	engine = Engine.create();
@@ -26,11 +26,9 @@ function setup() {
 	 //World.add(world, ground);
 	 
 	 paper1=new Paper(400,650,70,70);
-	 dustbin1=new Dustbin(width/2,height-50,200,20,{isStatic:true});
-	 dustbin2=new Dustbin(300,585,20,150,{isStatic:true});
-	 dustbin3=new Dustbin(500,585,20,150,{isStatic:true});
-	 ground1=new Ground(400,657,800,10);
-
+	 dustbin1=new Dustbin(1200,650);
+	 ground1=new Ground(800,670,1600,10);
+	
 	 sling = new Launch(paper1.body,{x:200,y:100});
 
 
@@ -44,19 +42,15 @@ function draw() {
   background(0);
   paper1.display();
   dustbin1.display();
-  dustbin2.display();
-  dustbin3.display();
   ground1.display();
   sling.dispaly();
-  
-  
-  
-  drawSprites();
+	
+   drawSprites();
 }
 
 function keyPressed(){
 	if (keyCode=== UP_ARROW){
-		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:70,y:-65});
+		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:300,y:-300});
 	}
 }
 function mouseDragged(){
